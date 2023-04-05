@@ -75,6 +75,12 @@ def generate_gpt_comment(file_diff, max_length=500):
     except openai.error.APIError as err:
         print(f"OpenAI had and API Error: {err}")
         return ""
+    except openai.error.AuthenticationError as err:
+        print(f"OpenAI had an authentication error: {err}")
+        return ""
+    except Exception as err:
+        print(f"OpenAI had an unknown error: {err}")
+        return ""
 
     generated_comment = response.choices[0].message["content"].strip()
     return generated_comment
