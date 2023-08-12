@@ -5,9 +5,9 @@ Provides a GitHub Action that generates code review comments using GPT-3.5-turbo
 import json
 import os
 
-import openai
-import requests
-import tiktoken
+import openai #type: ignore
+import requests #type: ignore
+import tiktoken #type: ignore
 
 # Set up OpenAI API
 openai.api_key = os.environ["OPENAI_API_KEY"]
